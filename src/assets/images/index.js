@@ -1,0 +1,17 @@
+export { default as Logo } from "./aala-blackpng.png";
+export { default as SliderImg } from "./katie-smith-uQs1802D0CQ-unsplash.jpg";
+export { default as Vegitable } from "./jennifer-schmidt-0XVrBLy73rw-unsplash.jpg";
+export { default as Fruit } from "./top-close-view-delicious-bananas-brown-fruit-berry-exotic-food.jpg";
+export { default as Chicken } from "./half-top-view-fresh-raw-chicken-with-green-leaves-dark-surface.jpg";
+export { default as Nutrition } from "./anna-pelzer-IGfIGP5ONV0-unsplash.jpg";
+export { default as Cabbage } from "./close-up-photo-leaves-lettuce-grey-background-basket.jpg";
+export { default as PhonePay } from "./fonepay.png";
+export { default as Khalti } from "./khalti-logo.svg";
+export { default as GooglePlay } from "./1.png";
+export { default as AppStore } from "./2.png";
+export { default as MobileImg } from "./Group18214.png";
+export { default as Alex } from "./alexander-hipp-iEEBWgY_6lA-unsplash.jpg";
+export { default as Jeni } from "./courtney-cook-TSZo17r3m0s-unsplash.jpg";
+export { default as Michel } from "./michael-dam-mEZ3PoFGs_k-unsplash.jpg";
+export { default as Esewa } from "./download.png";
+export { default as Nepal } from "./nepal.png";
