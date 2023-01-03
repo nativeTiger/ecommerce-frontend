@@ -50,7 +50,7 @@ const Footer = () => {
       <div className="container px-3 mx-auto">
         <div className="flex flex-col gap-y-9 sm:grid sm:grid-cols-2 lg:grid-cols-4 md:gap-x-8">
           <div>
-            <img src={Logo} alt="brand-logo" className="w-52 pb-8" />
+            <img src={Logo} alt="brand-logo" className="w-52 pb-5" />
             <ul className="text-base">
               <li className="flex items-center gap-x-2">
                 <UilPhone className="text-green" />

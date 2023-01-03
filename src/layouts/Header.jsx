@@ -50,7 +50,9 @@ const Header = () => {
       <hr className="text-lightGreen" />
       {/* Bottom Header */}
       <div className="container mx-auto p-3 sm:flex justify-between items-center">
-        <img src={Logo} alt="brand-logo" className="w-52" />
+        <Link to="/">
+          <img src={Logo} alt="brand-logo" className="w-52" />
+        </Link>
         <div className="flex items-center justify-between sm:gap-x-4">
           <form onSubmit={handleSubmit(handleSearch)} className="">
             <SearchInput
