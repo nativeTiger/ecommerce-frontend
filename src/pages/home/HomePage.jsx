@@ -1,10 +1,16 @@
 import Button from "../../components/Button/Button";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay } from "swiper";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import { servicesList } from "./HomeData";
+import { Pagination, Autoplay, Lazy, Navigation } from "swiper";
+import Category from "../../components/card/Category";
+import SectionTitle from "../../components/Title/SectionTitle";
+import SecondaryButton from "../../components/Button/SecondaryButton";
+import Featured from "../../components/card/Featured";
+import {
+  featuredProductList,
+  productCategoryList,
+  servicesList,
+} from "./HomeData";
+import { AppStore, GooglePlay, MobileImg } from "../../assets/images";
 
 const HomePage = () => {
   return (
@@ -55,6 +61,120 @@ const HomePage = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+      {/* Product Category */}
+      <div className="container mx-auto px-3 py-14">
+        <SectionTitle title="Product Category" />
+        <Swiper
+          lazy={true}
+          slidesPerView={2}
+          spaceBetween={10}
+          navigation={true}
+          breakpoints={{
+            440: {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+            768: {
+              slidesPerView: 5,
+              spaceBetween: 40,
+            },
+            1024: {
+              slidesPerView: 6,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Lazy, Navigation]}
+        >
+          {productCategoryList.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Category
+                image={item.image}
+                name={item.name}
+                noOfItem={item.item}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="flex justify-center items-center mt-12">
+          <SecondaryButton name="Browse more" />
+        </div>
+      </div>
+      {/* Discount Banner */}
+      <div className="container mx-auto px-3 py-14">
+        <div className=" bg-[url('./src/assets/images/variety-fresh-tasty-vegetables-dark.jpg')] bg-no-repeat bg-cover bg-bottom rotate-180 pt-44 pb-12 rounded-md">
+          <div className="text-center rotate-180">
+            <h3 className="font-lato font-black text-3xl sm:text-5xl pb-4 tracking-wide text-white">
+              Super Discount 70% OFF
+            </h3>
+            <p className="font-poppins font-medium text-lg tracking-wide text-white">
+              Hurry Up. Get your products now
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Best Deals for you */}
+      <div className="container mx-auto px-3 py-14">
+        <SectionTitle title="Best Deals For you" />
+        <Swiper
+          lazy={true}
+          slidesPerView={1.3}
+          spaceBetween={10}
+          navigation={true}
+          breakpoints={{
+            440: {
+              slidesPerView: 2,
+              spaceBetween: 20,
+            },
+            540: {
+              slidesPerView: 2.5,
+              spaceBetween: 25,
+            },
+            767: {
+              slidesPerView: 3,
+              spaceBetween: 40,
+            },
+            1023: {
+              slidesPerView: 4.5,
+              spaceBetween: 50,
+            },
+          }}
+          modules={[Lazy, Navigation]}
+        >
+          {featuredProductList.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Featured
+                image={item.image}
+                name={item.name}
+                weight={item.weight}
+                previousPrice={item.previousPrice}
+                currentPrice={item.currentPrice}
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className="flex justify-center items-center mt-12">
+          <SecondaryButton name="Browse more" />
+        </div>
+      </div>
+      {/* Mobile Apps */}
+      <div className="container mx-auto px-3 ">
+        <div className="lg:flex items-center gap-x-28">
+          <div className="">
+            <h3 className="font-lato font-black tracking-wide text-4xl text-darkGray">
+              Make your online shop easier with our mobile app
+            </h3>
+            <p className="font-poppins font-medium tracking-wide text-lg text-gray py-8">
+              Aala makes online grocery shopping fast and easy. Get groceries
+              delivered and order the best of seasonal farm fresh food.
+            </p>
+            <div className="flex gap-x-12 items-center">
+              <img className="w-40" src={GooglePlay} alt="" />
+              <img className="w-40" src={AppStore} alt="" />
+            </div>
+          </div>
+          <img src={MobileImg} alt="" className="w-full lg:w-2/5" />
         </div>
       </div>
     </div>

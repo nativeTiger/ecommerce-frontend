@@ -1,5 +1,4 @@
 import { Khalti, Logo, PhonePay } from "../assets/images";
-import SectionTitle from "../components/Title/SectionTitle";
 import { Link } from "react-router-dom";
 import {
   UilMapMarker,
@@ -11,6 +10,7 @@ import {
   UilAngleRight,
   UilCopyright,
 } from "@iconscout/react-unicons";
+import SectionTitle from "../components/Title/SectionTitle";
 
 // list of links
 const linkList = {
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
           <div>
             <SectionTitle title="Popular Products" />
-            <ul className="mt-4">
+            <ul className="">
               {linkList.popularProducts.map((item, index) => (
                 <li key={index}>
                   <UilAngleRight className="inline" />
@@ -79,14 +79,14 @@ const Footer = () => {
           </div>
           <div>
             <SectionTitle title="Payment Method" />
-            <div className="mt-4 flex flex-col gap-y-4">
+            <div className="flex flex-col gap-y-4">
               <img src={PhonePay} alt="phone-pay" className="w-32" />
               <img src={Khalti} alt="khati" className="w-32" />
             </div>
           </div>
           <div>
             <SectionTitle title="Connect with us" />
-            <div className="flex items-center gap-x-6 mt-4">
+            <div className="flex items-center gap-x-6">
               {linkList.socialLink.map((item, index) => (
                 <div className="bg-slate-300 p-3 rounded-md" key={index}>
                   {item}

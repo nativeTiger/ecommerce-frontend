@@ -49,38 +49,40 @@ const Header = () => {
       </div>
       <hr className="text-lightGreen" />
       {/* Bottom Header */}
-      <div className="container mx-auto p-3 sm:flex justify-between items-center">
-        <Link to="/">
-          <img src={Logo} alt="brand-logo" className="w-52" />
-        </Link>
-        <div className="flex items-center justify-between sm:gap-x-4">
-          <form onSubmit={handleSubmit(handleSearch)} className="">
-            <SearchInput
-              placeholder="Search"
-              name="search"
-              register={register}
-              onChange={handleSearch}
-            />
-          </form>
-          <div className="flex gap-x-6 items-center ">
-            <Link to="/cart" className="relative">
-              <UilShoppingCartAlt
-                className="text-gray hover:text-lightGreen duration-300"
-                size="36"
+      <header className="bg-white sticky top-0 z-10 shadow-md">
+        <div className="container mx-auto p-3 sm:flex justify-between items-center ">
+          <Link to="/">
+            <img src={Logo} alt="brand-logo" className="w-52" />
+          </Link>
+          <div className="flex items-center justify-between sm:gap-x-4">
+            <form onSubmit={handleSubmit(handleSearch)} className="">
+              <SearchInput
+                placeholder="Search"
+                name="search"
+                register={register}
+                onChange={handleSearch}
               />
-              <span className="rounded-full px-2 py-0.5 bg-green text-white text-sm absolute top-[-9px] left-4">
-                1
-              </span>
-            </Link>
-            <Link to="/profile">
-              <UilUserCircle
-                className="text-gray hover:text-lightGreen duration-300"
-                size="36"
-              />
-            </Link>
+            </form>
+            <div className="flex gap-x-6 items-center ">
+              <Link to="/cart" className="relative">
+                <UilShoppingCartAlt
+                  className="text-gray hover:text-lightGreen duration-300"
+                  size="36"
+                />
+                <span className="rounded-full px-2 py-0.5 bg-green text-white text-sm absolute top-[-9px] left-4">
+                  1
+                </span>
+              </Link>
+              <Link to="/profile">
+                <UilUserCircle
+                  className="text-gray hover:text-lightGreen duration-300"
+                  size="36"
+                />
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      </header>
     </>
   );
 };
